@@ -1,70 +1,141 @@
-# Getting Started with Create React App
+# Quantum-Enhanced AI Auditor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A revolutionary platform that combines quantum computing, homomorphic encryption, and advanced machine learning to provide provable fairness auditing for AI models at scale.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Quantum Speed**: Exponentially faster bias detection using quantum algorithms
+- **Privacy-Preserving**: Homomorphic encryption ensures model privacy during auditing
+- **Provable Certificates**: Cryptographically signed fairness certificates with public verification
+- **Real-time Monitoring**: Live monitoring of AI fairness auditing operations
+- **Professional UI**: Modern, responsive interface with comprehensive dashboards
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+├── backend/                 # Python Flask API
+│   ├── app.py              # Main Flask application
+│   ├── auditing.py         # AI fairness auditing logic
+│   ├── model_training.py   # Model training utilities
+│   ├── utils.py            # Utility functions
+│   ├── requirements.txt    # Python dependencies
+│   └── recruitment_data.csv # Sample dataset
+├── src/                    # React frontend
+│   ├── components/         # Reusable React components
+│   ├── pages/             # Page components
+│   ├── services/          # API service layer
+│   └── App.css           # Global styles
+├── public/                # Static assets
+└── package.json          # Node.js dependencies
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Backend Setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Navigate to the backend directory:
+   ```bash
+   cd backend
+   ```
 
-### `npm run build`
+2. Create a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. Run the Flask server:
+   ```bash
+   python app.py
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The backend will be available at `http://127.0.0.1:5000`
 
-### `npm run eject`
+### Frontend Setup
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Install Node.js dependencies:
+   ```bash
+   npm install
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Start the development server:
+   ```bash
+   npm start
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The frontend will be available at `http://localhost:3000`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## API Endpoints
 
-## Learn More
+### POST /audit
+Submit a model for fairness auditing.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Request Body:**
+- `file`: CSV file containing the dataset (multipart/form-data)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Response:**
+```json
+{
+  "model_name": {
+    "accuracy": 0.87,
+    "quantum_bias_score": 0.73,
+    "robustness_flip_fraction": 0.34,
+    "confusion_matrix_url": "/plots/confusion_matrix.png"
+  }
+}
+```
 
-### Code Splitting
+## Pages Overview
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. **Landing Page** - Hero section showcasing quantum-safe AI auditing
+2. **Dashboard** - Real-time KPIs, timeline charts, and incident monitoring
+3. **Submit Audit** - File upload with encryption progress and audit options
+4. **Model Explorer** - Browse and filter audit results
+5. **Audit Detail** - Comprehensive audit results with certificates
+6. **Real-time Monitor** - Live metrics and threat detection
+7. **Certificate Repository** - Public certificate verification
+8. **Documentation** - Technical documentation and API reference
 
-### Analyzing the Bundle Size
+## Technology Stack
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Backend
+- **Flask** - Python web framework
+- **scikit-learn** - Machine learning library
+- **pandas** - Data manipulation
+- **matplotlib/seaborn** - Data visualization
+- **Flask-CORS** - Cross-origin resource sharing
 
-### Making a Progressive Web App
+### Frontend
+- **React** - JavaScript UI library
+- **React Router** - Client-side routing
+- **Recharts** - Data visualization
+- **CSS3** - Modern styling with gradients and animations
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Professional Color Palette
 
-### Advanced Configuration
+- **Primary Blue**: #1e3a8a
+- **Secondary Blue**: #1e40af
+- **Success Green**: #059669
+- **Warning Orange**: #d97706
+- **Error Red**: #dc2626
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contributing
 
-### Deployment
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## License
 
-### `npm run build` fails to minify
+This project is licensed under the MIT License.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contact
+
+For questions or support, please open an issue on GitHub.
